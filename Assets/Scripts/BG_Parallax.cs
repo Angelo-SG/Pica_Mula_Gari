@@ -5,45 +5,30 @@ using UnityEngine.UI;
 
 public class BG_Parallax : MonoBehaviour
 {
+    Material mt;
+    Vector2 deslocamento;
 
-    [SerializeField] private Image fundo;
-    [SerializeField] private float velocidade;
-    private float largura;
-    private float posicaoInicial;
-
-    private Transform cameraPrincipal;
-
-    public float efeitoParallax;
-
+    public float intensidadeParallax;
 
     void Start(){
-        posicaoInicial  = transform.position.x;
-        largura         = GetComponent<SpriteRenderer>().bounds.size.x;
-        cameraPrincipal = Camera.main.transform;
+        // Instância um renderizador de sprites
+        SpriteRenderer renderizadorDeSprite = GetComponent<SpriteRenderer>();
+        // Atribui o primeiro material do sprite à variável "mt"
+        mt = renderizadorDeSprite.material;
+        // Atribui a propriedade de deslocamento da textura à variável "deslocamento"
+        deslocamento = mt.mainTextureOffset;
     }
 
-
     void Update(){
-        EfeitoParallax();
+        MoveFundo();
     }
 
     public void MoveFundo(){
-        //Aplica o efeito parallax quando uma tecla de movimentação horizontal é pressionada
-        transform.position = new Vector3(transform.position.x - velocidade * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
-        //Verifica se a imagem já chegou no final e reposiciona a duplicata para dar a impressão de cenário infinito
-        if (transform.position.x >= fundo.preferredWidth){
-            transform.position = new Vector3(transform.position.x - fundo.preferredWidth * 2, 0, 0);
-            Debug.Log("Funciona!");
-        } else if (transform.position.x <= fundo.preferredWidth){ 
-            transform.position = new Vector3(transform.position.x + fundo.preferredWidth * 2, 0, 0);
-        }
-    }
-
-    public void EfeitoParallax()
-    {
-        float distancia = cameraPrincipal.transform.position.x * efeitoParallax;
-
-        transform.position = new Vector3(posicaoInicial + distancia, 0, 0);
-
+        // Divide o valor do efeito parallax pelo espaço de tempo (em segundos)
+        // entre cada frame e em seguida atribui o resultado no deslocamento do
+        // eixo x do material
+        deslocamento.x += Time.deltaTime / intensidadeParallax;
+        // Atribui o valor de deslocamento para a textura principal do material
+        mt.mainTextureOffset = deslocamento;
     }
 }
