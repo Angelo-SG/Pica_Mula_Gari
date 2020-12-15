@@ -6,12 +6,13 @@ public class PlayerLifeNotification : MonoBehaviour
 {
     private int count = 0;
     private int lastPoint = 0;
+    private float time = 0;
+    public int timeLimit = 0;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Element")
         {
-            Debug.Log("foi");
             count = other.gameObject.GetComponent<IElementEffect>().Applay();
         }
     }
@@ -23,10 +24,18 @@ public class PlayerLifeNotification : MonoBehaviour
 
     public void FeedbackLife()
     {
+        time += Time.deltaTime;
         if (count < lastPoint)
         {
-            // rats feedback
+            time = 0;
+        }else{
+            if( time > timeLimit){
+                RatsToAway();
+            }
         }
         lastPoint = count;
+    }
+    public void RatsToAway(){
+
     }
 }
