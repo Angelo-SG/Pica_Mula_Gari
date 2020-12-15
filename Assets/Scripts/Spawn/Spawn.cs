@@ -27,13 +27,19 @@ public class Spawn : MonoBehaviour
         }
         ToSow();
     }
+    private void Update()
+    {
+        ToSow();
+    }
     private void OnEnable()
     {
-        EllementEvent.GoToPool += GiveBack;
+        Collectabel.GoToPool += GiveBack;
+        Obstacle.GoToPool += GiveBack;
     }
     private void OnDisable()
     {
-        EllementEvent.GoToPool -= GiveBack;
+        Collectabel.GoToPool -= GiveBack;
+        Obstacle.GoToPool -= GiveBack;
     }
     public void SpawnPosition(int index)
     {
@@ -88,12 +94,6 @@ public class Spawn : MonoBehaviour
             }
         }
     }
-
-    private void Update()
-    {
-        ToSow();
-    }
-
     public void GiveBack(GameObject target)
     {
         int index = 0;
