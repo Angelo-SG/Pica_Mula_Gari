@@ -37,11 +37,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Images\Level 01\MovimentLayer.cs" />
-     <Compile Include="Assets\Images\collectables\MovimentElemnts.cs" />
+     <Compile Include="Assets\Images\collectables\prefab\MovimentElemnts.cs" />
+     <Compile Include="Assets\Images\collectables\effect\EffectNotification.cs" />
+     <Compile Include="Assets\Images\collectables\effect\Collectabel.cs" />
+     <Compile Include="Assets\Images\collectables\effect\IElementEffect.cs" />
+     <Compile Include="Assets\Images\collectables\prefab\EllementEvent.cs" />
      <Compile Include="Assets\Scripts\Progress.cs" />
+     <Compile Include="Assets\Images\collectables\effect\Obstacle.cs" />
      <Compile Include="Assets\Scripts\Spawn\Spawn.cs" />
      <Compile Include="Assets\Scripts\Spawn\Pool.cs" />
-     <Compile Include="Assets\Images\collectables\CollectablesEvent.cs" />
+     <Compile Include="Assets\UI\FeedbackLife.cs" />
+     <Compile Include="Assets\Player\PlayerLifeNotification.cs" />
      <None Include="Assets\Images\Level 01\Materials\Paralax.shader" />
     <Reference Include="UnityEngine">
         <HintPath>/media/bruno/18af7648-b34b-4cdb-81ac-4a19cb1b4670/programa/unity/2020.1.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

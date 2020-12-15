@@ -29,11 +29,11 @@ public class Spawn : MonoBehaviour
     }
     private void OnEnable()
     {
-        CollectablesEvent.GoToPool += GiveBack;
+        EllementEvent.GoToPool += GiveBack;
     }
     private void OnDisable()
     {
-        CollectablesEvent.GoToPool -= GiveBack;
+        EllementEvent.GoToPool -= GiveBack;
     }
     public void SpawnPosition(int index)
     {
