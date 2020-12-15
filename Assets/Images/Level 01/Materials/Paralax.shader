@@ -5,7 +5,9 @@
                 _Next ("Texture Buff", 2d) = "white" {}
                 _SplitScreem ("Split Screem", Range(-.5,1.5)) = 0.0
                 _Ligth ("Ligth Factor", Range(0,1)) = 0
-                _Speed ("Speed Factory", Float) = 0
+                _Distance ("Distance", Float) = 0
+                _Leveler("Leveler",float) = 0
+                _Unit("Unity", float) = 18
                 
         }
         SubShader{  
@@ -36,7 +38,9 @@
                         sampler2D _Next;
                         float _SplitScreem;
                         float _Ligth;
-                        float _Speed;
+                        float _Distance;
+                        float _Leveler;
+                        float _Unit;
 
                         v2f vertexUpdate(appdata IN){
                                 v2f OUT;
@@ -55,8 +59,8 @@
                                 float4 buff;
                                 float _Smoothness = 16;
 
-                                left.uv = float2(IN.uv.x + _Time.y * _Speed, IN.uv.y);
-                                right.uv = float2(IN.uv.x + _Time.y * _Speed, IN.uv.y);
+                                left.uv = float2(IN.uv.x  + (_Distance / _Unit) * _Leveler, IN.uv.y);
+                                right.uv = float2(IN.uv.x + (_Distance / _Unit) * _Leveler, IN.uv.y);
 
                                 IN.uv.x -= _SplitScreem;
                                 

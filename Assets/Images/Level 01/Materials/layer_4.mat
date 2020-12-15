@@ -28,8 +28,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Distance: 0
+    - _Leveler: 0.4
     - _Ligth: 1
     - _Speed: 0.05
-    - _SplitScreem: 1.5
+    - _SplitScreem: -0.5
+    - _Unit: 18
     m_Colors: []
   m_BuildTextureStacks: []

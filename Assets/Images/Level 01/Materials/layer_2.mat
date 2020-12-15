@@ -24,12 +24,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Next:
-        m_Texture: {fileID: 2800000, guid: 780c55d9b0c267ab69d56968ef623b37, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 0560c289fed02354ea04c0172d5cf58f, type: 3}
+        m_Scale: {x: 0, y: 0}
+        m_Offset: {x: 0.81, y: 0.14}
     m_Floats:
+    - _Distance: 0
+    - _Leveler: 0.8
     - _Ligth: 1
     - _Speed: 0.15
-    - _SplitScreem: 1.5
+    - _SplitScreem: -0.5
+    - _Unit: 18
     m_Colors: []
   m_BuildTextureStacks: []
