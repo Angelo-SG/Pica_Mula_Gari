@@ -18,7 +18,6 @@ public class RatsAttack : MonoBehaviour
     }
     private void Approach(int distance)
     {
-        Debug.Log(distance);
         transform.position = new Vector3(-5f,0f,0f) * distance + startPos;
     }
 }
