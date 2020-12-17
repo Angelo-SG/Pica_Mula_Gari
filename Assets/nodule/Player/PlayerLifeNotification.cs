@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class PlayerLifeNotification : MonoBehaviour
 {
     private int currentPoint = 0;
@@ -20,10 +21,7 @@ public class PlayerLifeNotification : MonoBehaviour
 
     private void Start()
     {
-        if (ratsDistance != null)
-        {
-            ratsDistance(currentLife);
-        }
+        MuveRats();
     }
     private void Update()
     {
