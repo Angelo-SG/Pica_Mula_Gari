@@ -320,7 +320,6 @@ MonoBehaviour:
   distanceX: 0
   concecutiveInLine: 4
   playerSprite: {fileID: 2125900962}
-  interval: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +778,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125900961}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -858,6 +857,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 772252335085692107, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: speedAtack
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3340519679597303140, guid: c15af30081bac8ea3ae9bf1c1d820bea,
         type: 3}
       propertyPath: prewarm

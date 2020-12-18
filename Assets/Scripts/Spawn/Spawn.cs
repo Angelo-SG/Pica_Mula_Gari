@@ -14,7 +14,6 @@ public class Spawn : MonoBehaviour
     private GameObject last;
     public SpriteRenderer playerSprite;
 
-    public float interval = 2;
     private int concecutive = 0;
     private int lastLineSelect = 0;
     private void Start()
