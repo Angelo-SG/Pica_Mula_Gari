@@ -21,7 +21,7 @@ public class PlayerLifeNotification : MonoBehaviour
 
     private void Start()
     {
-        MuveRats();
+        MoveRats();
     }
     private void Update()
     {
@@ -35,7 +35,7 @@ public class PlayerLifeNotification : MonoBehaviour
         {
             countTime = 0;
             currentLife--;
-            MuveRats();
+            MoveRats();
             currentPoint = 1;
         }
         else
@@ -44,14 +44,15 @@ public class PlayerLifeNotification : MonoBehaviour
             {
                 countTime = 0;
                 currentLife++;
-                MuveRats();
+                MoveRats();
             }
         }
     }
-    public void MuveRats()
+    public void MoveRats()
     {
         if (ratsDistance != null)
         {
+            Debug.Log(currentLife);
             ratsDistance(currentLife);
         }
     }

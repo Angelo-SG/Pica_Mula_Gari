@@ -42,14 +42,14 @@
      <Compile Include="Assets\nodule\elements\scripts\Collectabel.cs" />
      <Compile Include="Assets\nodule\elements\scripts\IElementEffect.cs" />
      <Compile Include="Assets\UI\FeedbackLife.cs" />
+     <Compile Include="Assets\nodule\Player\scripts\PlayerMoviment.cs" />
      <Compile Include="Assets\nodule\rats\scripts\RatsAttack.cs" />
      <Compile Include="Assets\Scripts\Progress.cs" />
      <Compile Include="Assets\nodule\Player\scripts\PlayerLifeNotification.cs" />
      <Compile Include="Assets\nodule\elements\scripts\Obstacle.cs" />
      <Compile Include="Assets\Scripts\Spawn\Spawn.cs" />
+     <Compile Include="Assets\nodule\Player\scripts\AnimationControl.cs" />
      <Compile Include="Assets\Scripts\Spawn\Pool.cs" />
-     <Compile Include="Assets\nodule\Player\scripts\Jump.cs" />
-     <Compile Include="Assets\nodule\Player\scripts\PlayerMoviment.cs" />
      <None Include="Assets\nodule\Level 01\Materials\Paralax.shader" />
     <Reference Include="UnityEngine">
         <HintPath>/media/bruno/18af7648-b34b-4cdb-81ac-4a19cb1b4670/programa/unity/2020.1.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
