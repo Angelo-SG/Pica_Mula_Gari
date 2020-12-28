@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectabel : EffectNotification, IElementEffect
+public class Collectabel : EffectNotification
 {
     public static event Action<GameObject> GoToPool;
     public int life;
-    public int Applay()
+    public override int Applay()
     {
         Notify(life);
         return life;

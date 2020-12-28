@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : EffectNotification, IElementEffect
+public class Obstacle : EffectNotification
 {
     public int life;
     public static event Action<GameObject> GoToPool;
-    public int Applay()
+    public override int Applay()
     {
         Notify(life);
         return life;

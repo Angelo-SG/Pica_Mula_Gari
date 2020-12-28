@@ -11,6 +11,7 @@ public class RatsAttack : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
+        Approach(1);
     }
     private void OnEnable()
     {

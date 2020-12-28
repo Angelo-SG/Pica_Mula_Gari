@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -17,11 +18,6 @@ public class PlayerLifeNotification : MonoBehaviour
         {
             currentPoint = other.gameObject.GetComponent<IElementEffect>().Applay();
         }
-    }
-
-    private void Start()
-    {
-        MoveRats();
     }
     private void Update()
     {
@@ -49,10 +45,9 @@ public class PlayerLifeNotification : MonoBehaviour
         }
     }
     public void MoveRats()
-    {
+    {     
         if (ratsDistance != null)
         {
-            Debug.Log(currentLife);
             ratsDistance(currentLife);
         }
     }
