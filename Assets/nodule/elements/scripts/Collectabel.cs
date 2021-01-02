@@ -3,30 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectabel : EffectNotification
+public class Collectabel : Element
 {
-    public static event Action<GameObject> GoToPool;
-    public int life;
-    public override int Applay()
+    public override void Applay(GameObject target)
     {
-        Notify(life);
-        return life;
+        base.Applay();
+        Notify(points);
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            if (GoToPool != null)
-            {
-                GoToPool(gameObject);
-            }
-        }
-    }
-    private void OnBecameInvisible()
-    {
-        if (GoToPool != null)
-        {
-            GoToPool(gameObject);
-        }
-    }
+
 }

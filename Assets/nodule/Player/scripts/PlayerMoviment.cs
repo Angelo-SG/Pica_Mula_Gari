@@ -20,6 +20,5 @@ public class PlayerMoviment : MonoBehaviour
     {
         direction = Input.GetAxisRaw("Vertical");
         transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x,startPosition.y + direction * distance, transform.position.z), time);
-
     }
 }

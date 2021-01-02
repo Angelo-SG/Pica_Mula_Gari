@@ -13,6 +13,10 @@
         SubShader{  
                 BlendOp Add     
                 Blend SrcAlpha OneMinusSrcAlpha
+                Cull Off
+                Lighting On
+                ZWrite off
+                ZTest always
                 pass{                    
                         CGPROGRAM
                         #pragma vertex vertexUpdate

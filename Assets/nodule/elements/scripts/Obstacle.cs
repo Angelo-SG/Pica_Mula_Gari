@@ -3,20 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : EffectNotification
+public class Obstacle : Element
 {
-    public int life;
-    public static event Action<GameObject> GoToPool;
-    public override int Applay()
+    private float timeLife;
+    private PlayerMoviment control;
+
+    public override void Applay(GameObject target)
     {
-        Notify(life);
-        return life;
+        control = target.GetComponent<PlayerMoviment>();
+        timeLife = Time.time;
+        control.enabled = false;
+        Notify(points);
     }
-    private void OnBecameInvisible()
+    private void Update()
     {
-        if (GoToPool != null)
-        {
-            GoToPool(gameObject);
-        }
+        if (control != null)
+            if (Time.time - timeLife >= 2.0f && !control.enabled)
+            {
+                control.enabled = true;
+            }
     }
+
 }

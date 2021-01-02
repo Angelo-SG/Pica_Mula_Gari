@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -15,8 +15,8 @@ public class PlayerLifeNotification : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Element")
-        {
-            currentPoint = other.gameObject.GetComponent<IElementEffect>().Applay();
+        {   
+           other.gameObject.GetComponent<Element>().Applay(transform.parent.gameObject);
         }
     }
     private void Update()

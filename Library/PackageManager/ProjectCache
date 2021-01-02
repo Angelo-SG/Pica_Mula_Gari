@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637438874180000000
-    m_Hash: 1887353318
+      ticks: 637448335760000000
+    m_Hash: 4084638874
   m_LockFileStatus:
     m_FilePath: /media/bruno/18af7648-b34b-4cdb-81ac-4a19cb1b4670/programa/git/gameUnity/TCP-1/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637438874180000000
-    m_Hash: 1670978601
+      ticks: 637448335760000000
+    m_Hash: 1988210128
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -972,12 +972,12 @@ m_PackageAssets:
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
         revision: 14025b364215f4465cbe1beb7a81e486b2687ced
         path: 
-    - packageId: com.unity.textmeshpro@3.0.1
+    - packageId: com.unity.textmeshpro@3.0.3
       testable: 0
       isDirectDependency: 1
-      version: 3.0.1
+      version: 3.0.3
       source: 1
-      resolvedPath: /media/bruno/18af7648-b34b-4cdb-81ac-4a19cb1b4670/programa/git/gameUnity/TCP-1/Library/PackageCache/com.unity.textmeshpro@3.0.1
+      resolvedPath: /media/bruno/18af7648-b34b-4cdb-81ac-4a19cb1b4670/programa/git/gameUnity/TCP-1/Library/PackageCache/com.unity.textmeshpro@3.0.3
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -1111,13 +1111,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637314376320000000
+      datePublishedTicks: 637394911680000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-        revision: 1604b62e543216408311bcd1355a7a9ca1e65765
+        revision: 648406226df6c4f28a0f64eaab42ddc3db70c475
         path: 
     - packageId: com.unity.timeline@1.2.17
       testable: 0
