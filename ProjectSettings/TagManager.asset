@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Element
+  - ratsPS
   layers:
   - Default
   - TransparentFX

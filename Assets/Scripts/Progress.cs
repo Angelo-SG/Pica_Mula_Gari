@@ -10,9 +10,10 @@ public class Progress : MonoBehaviour
     public float InitialSpeed = 0;
     private float count = 0;
     private float speedF = 0;
+    public bool able = true;
     public float Distance
     {
-        get { return InitialSpeed * count + (acceleration * Mathf.Pow(count,2)) / 2; }
+        get { return InitialSpeed * count + (acceleration * Mathf.Pow(count, 2)) / 2; }
         set { }
     }
     public float Speed
@@ -32,7 +33,18 @@ public class Progress : MonoBehaviour
     }
     private void Update()
     {
-        count += Time.deltaTime;
-        speedF = InitialSpeed + acceleration * count;
+        if (able)
+        {
+            count += Time.deltaTime;
+            speedF = InitialSpeed + acceleration * count;
+        }
+    }
+    public void Stop()
+    {
+        able = false;
+    }
+    public void Resume()
+    {
+        able = false;
     }
 }

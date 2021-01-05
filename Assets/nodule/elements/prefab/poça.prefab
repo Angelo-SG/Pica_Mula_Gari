@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1625611776608905784}
   - component: {fileID: 2090213013026620350}
   - component: {fileID: 6778152239162200732}
-  - component: {fileID: 1651324262685213209}
+  - component: {fileID: 350028209940124715}
   m_Layer: 0
   m_Name: "po\xE7a"
   m_TagString: Element
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c111314a93489d8acbe4a4b53958b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1651324262685213209
+--- !u!114 &350028209940124715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,8 +132,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6510047235303693425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29d9c1b6044f7821a3b56ed5fc34dcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bfa06d04ee0e990d8fdb3457e3adb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 0
-  control: {fileID: 8717215777274364101, guid: e483ae08e5d3456e788228bbd93cbf54, type: 3}
+  speed: 10
+  checkpointY1: 1.5
+  checkpointY2: -1.5

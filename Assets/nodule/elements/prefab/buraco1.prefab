@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2028339652581908433}
   - component: {fileID: 6482414221289307057}
   - component: {fileID: 4505889408578779100}
-  - component: {fileID: 2562273835592295232}
+  - component: {fileID: -6413426869400450019}
   m_Layer: 0
   m_Name: buraco1
   m_TagString: Element
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613c111314a93489d8acbe4a4b53958b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2562273835592295232
+--- !u!114 &-6413426869400450019
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,8 +132,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8095189226457129525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29d9c1b6044f7821a3b56ed5fc34dcb, type: 3}
+  m_Script: {fileID: 11500000, guid: a9d9f50e363b3e1eaa7511a0465c1f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 0
-  control: {fileID: 8717215777274364101, guid: e483ae08e5d3456e788228bbd93cbf54, type: 3}

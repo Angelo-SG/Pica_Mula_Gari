@@ -16,10 +16,11 @@ public class MovimentElemnts : MonoBehaviour
     }
     private void Move()
     {
-        if (gameObject.activeSelf)
+        if (gameObject.activeSelf && Progress.instance.able)
         {
             timeLife += Time.deltaTime;
-            transform.position = new Vector3((spaceInitial.x + sense * (speed * timeLife + Progress.instance.acceleration * Mathf.Pow(timeLife, 2)/2)), transform.position.y, spaceInitial.z);
+            float space = speed * timeLife;
+            transform.position = new Vector3((spaceInitial.x + sense * ( space + Progress.instance.acceleration * Mathf.Pow(timeLife, 2)/2)), transform.position.y, spaceInitial.z);
         }
     }
     public void Boost()

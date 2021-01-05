@@ -15,11 +15,11 @@ public class RatsAttack : MonoBehaviour
     }
     private void OnEnable()
     {
-        PlayerLifeNotification.ratsDistance += Approach;
+        Life.ratsDistance += Approach;
     }
     private void OnDisable()
     {
-        PlayerLifeNotification.ratsDistance += Approach;
+        Life.ratsDistance += Approach;
     }
     private void Approach(int distance)
     {

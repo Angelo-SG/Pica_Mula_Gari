@@ -8,7 +8,6 @@ public abstract class Element : MonoBehaviour
 {
     public static event Action<int> Spray;
     public static event Action<GameObject> GoToPool;
-    public int points;
 
     private void OnBecameInvisible()
     {

@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLimit: 5
-  target: {fileID: 9096581566408631502}
 --- !u!95 &1967037128528225072
 Animator:
   serializedVersion: 3
@@ -272,6 +271,7 @@ GameObject:
   - component: {fileID: 9096581566408631500}
   - component: {fileID: 9096581566408631496}
   - component: {fileID: 8717215777274364101}
+  - component: {fileID: 5977944581842323631}
   m_Layer: 0
   m_Name: character
   m_TagString: Player
@@ -328,3 +328,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0.2
   distance: 1
+--- !u!114 &5977944581842323631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9096581566408631502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146c61442bc2cadd7a1b01abbe87c148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StunCooldown: 2

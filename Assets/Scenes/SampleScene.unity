@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 0.1
   InitialSpeed: 5
+  able: 1
 --- !u!4 &129876585
 Transform:
   m_ObjectHideFlags: 0
@@ -1762,6 +1763,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254298832271604989, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254298832271604989, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: m_TagString
+      value: ratsPS
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444669050179601213, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444669050179601213, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3340519679597303142, guid: c15af30081bac8ea3ae9bf1c1d820bea,
         type: 3}
       propertyPath: m_RootOrder
@@ -1821,6 +1842,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: rats
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365954450103913756, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: m_TagString
+      value: ratsPS
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002389021355360810, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9002389021355360810, guid: c15af30081bac8ea3ae9bf1c1d820bea,
+        type: 3}
+      propertyPath: m_TagString
+      value: ratsPS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c15af30081bac8ea3ae9bf1c1d820bea, type: 3}
@@ -1995,6 +2031,11 @@ PrefabInstance:
       propertyPath: distance
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8717215777274364101, guid: e483ae08e5d3456e788228bbd93cbf54,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9096581566408631500, guid: e483ae08e5d3456e788228bbd93cbf54,
         type: 3}
       propertyPath: m_RootOrder
@@ -2055,5 +2096,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7032870359755455145, guid: e483ae08e5d3456e788228bbd93cbf54, type: 3}
+    - {fileID: 5977944581842323631, guid: e483ae08e5d3456e788228bbd93cbf54, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e483ae08e5d3456e788228bbd93cbf54, type: 3}

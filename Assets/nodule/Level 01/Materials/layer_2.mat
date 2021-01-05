@@ -32,7 +32,7 @@ Material:
     - _Leveler: 0.8
     - _Ligth: 1
     - _Speed: 0.15
-    - _SplitScreem: 1.5
+    - _SplitScreem: -0.5
     - _Unit: 18
     m_Colors: []
   m_BuildTextureStacks: []
