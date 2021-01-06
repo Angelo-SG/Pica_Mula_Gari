@@ -1,14 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OilPuddle : Effect
 {
-    private GameObject target;
     private int index = 0;
     private float[] order = new float[3];
-    private bool able = false;
     private float speed = 0;
     private float topLineY = -1.11f;
     private float bottomLineY = -4.11f;
@@ -16,12 +11,10 @@ public class OilPuddle : Effect
     private float checkpointY2 = 0;
     public OilPuddle(GameObject target, float speed, float checkpointY1, float checkpointY2)
     {
-        this.target = target.transform.parent.gameObject;
+        this.target = target;
         this.speed = speed;
         this.checkpointY1 = checkpointY1;
         this.checkpointY2 = checkpointY2;
-
-
     }
     public void Slip()
     {

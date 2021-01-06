@@ -1,5 +1,8 @@
-﻿public abstract class Effect
+﻿using UnityEngine;
+public abstract class Effect
 {
-    public abstract void Update();
+    protected GameObject target;
+    protected bool able = false;
+    public virtual void Update(){}
 
 }

@@ -6,10 +6,13 @@ using UnityEngine;
 public class Collectabel : Element
 {
     public int points;
+    private GameObject target;
     public override void Applay(GameObject target)
     {
+        this.target = target;
         base.Applay();
         Notify(points);
-    }
 
+        target.GetComponent<Life>().CurrentPoint = target.GetComponent<Player>().Avaliable(points);
+    }
 }

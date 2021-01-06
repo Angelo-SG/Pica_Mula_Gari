@@ -1,13 +1,8 @@
 ﻿using UnityEngine;
-using System;
 public class Crack : Effect
 {
-    private GameObject target;
-    public float stunTime;
+    public float duraction;
     private float count;
-    private Effect effect;
-    private bool able = false;
-    private float buff;
     public Crack(GameObject target)
     {
         this.target = target;
@@ -15,7 +10,6 @@ public class Crack : Effect
     public void Stun()
     {
         target.GetComponent<Controller>().enabled = false;
-        buff = Time.time;
         count = 0;
         able = true;
     }
@@ -25,7 +19,7 @@ public class Crack : Effect
         if (able)
         {
             count += Time.deltaTime;
-            if (count > stunTime)
+            if (count > duraction)
             {
                 Reset();
             }

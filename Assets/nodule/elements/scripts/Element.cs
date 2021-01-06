@@ -5,7 +5,10 @@ public abstract class Element : MonoBehaviour
 {
     public static event Action<int> Spray;
     public static event Action<GameObject> GoToPool;
-
+    private void OnEnable()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+    }
     private void OnBecameInvisible()
     {
         if (GoToPool != null)
@@ -22,9 +25,6 @@ public abstract class Element : MonoBehaviour
     }
     public virtual void Applay(GameObject target = null)
     {
-         if (GoToPool != null)
-        {
-            GoToPool(gameObject);
-        }
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }

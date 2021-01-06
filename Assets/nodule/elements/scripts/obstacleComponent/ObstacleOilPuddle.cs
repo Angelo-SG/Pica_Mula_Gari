@@ -7,9 +7,11 @@ public class ObstacleOilPuddle : Obstacle
     public float checkpointY2 = 0;
     public override void Applay(GameObject target)
     {
-        effect = new OilPuddle(target,speed,checkpointY1,checkpointY2);
+        effect = new OilPuddle(target, speed, checkpointY1, checkpointY2);
         (effect as OilPuddle).Slip();
         target.GetComponent<Life>().effect = effect;
+        target.GetComponent<Life>().CurrentPoint = -1;
+
     }
 }
 

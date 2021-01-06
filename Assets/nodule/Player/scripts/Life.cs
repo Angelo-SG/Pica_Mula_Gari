@@ -11,15 +11,19 @@ public class Life : MonoBehaviour
     public Effect effect = new ObjNullEffect();
     public static event Action<int> ratsDistance;
 
+    public int CurrentPoint
+    {
+        get { return currentPoint; }
+        set { currentPoint = value; }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Element")
         {
             other.gameObject.GetComponent<Element>().Applay(gameObject);
-            // if pontos incompativel com o character ou obstáculos MoveRats()
         }
     }
- 
+
     private void Update()
     {
         effect.Update();
