@@ -9,7 +9,6 @@ public class Controller : MonoBehaviour
     public float distance;
     private float direction;
     private Vector3 startPosition;
-    private bool ableAnimation;
 
 
     private void Start() {

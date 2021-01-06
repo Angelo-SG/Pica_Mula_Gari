@@ -43,7 +43,7 @@ public class Progress : MonoBehaviour
     {
         able = false;
     }
-    public void Resume()
+    public void Play()
     {
         able = false;
     }

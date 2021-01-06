@@ -1,13 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RatsAttack : MonoBehaviour
 {
+    public static RatsAttack instance;
     private Vector3 startPos;
     private Vector3 nextRatsPos;
     private bool ableMove = false;
     public float speedAtack = 0.2f;
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         startPos = transform.position;
@@ -35,6 +38,21 @@ public class RatsAttack : MonoBehaviour
             {
                 ableMove = false;
             }
+        }
+    }
+    public void Stop()
+    {
+        foreach (ParticleSystem item in gameObject.GetComponentsInChildren<ParticleSystem>())
+        {
+            item.Stop();
+        }
+    }
+
+    public void Play()
+    {
+        foreach (ParticleSystem item in gameObject.GetComponentsInChildren<ParticleSystem>())
+        {
+            item.Play();
         }
     }
 }

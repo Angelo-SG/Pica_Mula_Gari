@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -11,19 +8,23 @@ public class Life : MonoBehaviour
     private float countTime = 0;
     public int timeLimit = 0;
     private int currentLife = 1;
+    public Effect effect = new ObjNullEffect();
     public static event Action<int> ratsDistance;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Element")
-        {   
-           other.gameObject.GetComponent<Element>().Applay(transform.parent.gameObject);
+        {
+            other.gameObject.GetComponent<Element>().Applay(gameObject);
+            // if pontos incompativel com o character ou obstáculos MoveRats()
         }
     }
+ 
     private void Update()
     {
+        effect.Update();
         FeedbackLife();
     }
-
     public void FeedbackLife()
     {
         countTime += Time.deltaTime;
@@ -45,7 +46,7 @@ public class Life : MonoBehaviour
         }
     }
     public void MoveRats()
-    {     
+    {
         if (ratsDistance != null)
         {
             ratsDistance(currentLife);
