@@ -6,8 +6,8 @@ using UnityEngine;
 public class Collectabel : Element
 {
     public int points;
-    private GameObject target;
-    public override void Applay(GameObject target)
+    private UnityEngine.GameObject target;
+    public override void Applay(UnityEngine.GameObject target)
     {
         this.target = target;
         base.Applay();

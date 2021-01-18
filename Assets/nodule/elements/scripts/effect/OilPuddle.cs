@@ -16,7 +16,7 @@ public class OilPuddle : Effect
         this.checkpointY1 = checkpointY1;
         this.checkpointY2 = checkpointY2;
     }
-    public void Slip()
+        public void Slip()
     {
         target.GetComponent<Controller>().enabled = false;
 

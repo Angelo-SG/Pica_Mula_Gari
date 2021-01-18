@@ -6,11 +6,20 @@ public class Life : MonoBehaviour
 {
     private int currentPoint = 0;
     private float countTime = 0;
+    private Animator animator;
     public int timeLimit = 0;
     private int currentLife = 1;
+    public enum state {DEAD, ALIVE}
+    public static state situation;
     public Effect effect = new ObjNullEffect();
     public static event Action<int> ratsDistance;
 
+
+    private void Start()
+    {
+        animator = gameObject.GetComponent<Animator>();
+        situation = state.ALIVE;
+    }
     public int CurrentPoint
     {
         get { return currentPoint; }
@@ -53,7 +62,23 @@ public class Life : MonoBehaviour
     {
         if (ratsDistance != null)
         {
+            if (currentLife == 0)
+            {
+                dead();
+            }
             ratsDistance(currentLife);
         }
+    }
+    private void dead()
+    {
+        Invoke("laziDead",.5f);
+        
+        RatsAttack.instance.Stop();
+        effect = new ObjNullEffect();
+        situation = state.DEAD;
+        animator.Play("Dead");
+    }
+    private void laziDead(){
+        Progress.instance.Stop();
     }
 }

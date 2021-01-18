@@ -13,7 +13,6 @@ public class Hole : Effect
     }
     public void Reset()
     {
-        able = false;
         target.SetActive(true);
         RatsAttack.instance.Play();
         Progress.instance.Play();

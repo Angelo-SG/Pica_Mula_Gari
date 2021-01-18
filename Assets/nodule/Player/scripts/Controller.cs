@@ -13,13 +13,18 @@ public class Controller : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = gameObject.GetComponent<Animator>();
         startPosition = transform.position;
     }
 
     private void Update()
     {
+        if (Life.situation != Life.state.ALIVE)
+        {
+            return;
+        }
         direction = Input.GetAxisRaw("Vertical");
+
         transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, startPosition.y + direction * distance, transform.position.z), time);
 
         if (onFloor)

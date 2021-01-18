@@ -6,10 +6,15 @@ public class ObstacleHole : Obstacle
     public override void Applay(GameObject target)
     {
         effect = new Hole(target);
-        Progress.instance.Stop();
         RatsAttack.instance.Stop();
-        (effect as Hole).Fall();
+        Invoke("laziFall", 0.1f);
         target.GetComponent<Life>().effect = effect;
         target.GetComponent<Life>().CurrentPoint = -1;
+    }
+
+    private void laziFall()
+    {
+        Progress.instance.Stop();
+        (effect as Hole).Fall();
     }
 }
