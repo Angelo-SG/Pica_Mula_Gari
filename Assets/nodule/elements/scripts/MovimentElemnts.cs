@@ -6,6 +6,9 @@ public class MovimentElemnts : MonoBehaviour
     private Vector3 spaceInitial;
     private float speed = 0;
     private float timeLife = 0;
+    public float Speed{
+        set{speed = value;}
+    }
     private void Start()
     {
         spaceInitial = transform.position;

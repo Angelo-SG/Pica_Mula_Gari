@@ -1,68 +1,74 @@
-﻿using System.Diagnostics;
-using System.Net;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements.Experimental;
 
 public class SlideBar : MonoBehaviour
 {
     private Image fill;
-    public float factor = .01f;
     private const float FPS = 60;
     private float current = 0;
-    public bool active = false;
-    private float lerpFactor = 1;
     public float time;
+    public float decay;
+    private float buffTime;
     private float next = 0;
-    public bool decrement = false;
-    private float valueControll;
-    private void OnEnable()
+
+    public static bool active;
+    public float factor;
+    private bool stopped = false;
+    private int direction = 1;
+    public int Direction
     {
-        Element.Spray += SetValue;
+        set { direction = value; }
+        get
+        {
+            if (current >= 0.975f)
+            {
+                direction = -1;
+            }
+            if (current <= 0.025f)
+            {
+                time = buffTime;
+                direction = 1;
+            }
+            return direction;
+        }
     }
-    private void OnDisable()
+
+    public float Value
     {
-        Element.Spray -= SetValue;
+        set { }
+        get { return this.current; }
     }
+
     private void Start()
     {
+        buffTime = time;
         fill = GetComponent<Image>();
     }
     void Update()
     {
-        this.current = Mathf.Lerp(this.current, this.next, FPS * lerpFactor * time * Time.deltaTime);
-        fill.rectTransform.localScale = new Vector2(1, this.current);
+        if (!stopped)
+        {
+            this.current = Mathf.Lerp(this.current, this.next, FPS * time * Time.deltaTime);
+            fill.rectTransform.localScale = new Vector2(1, this.current);
+        }
     }
     public void SetValue(int value)
     {
-        if (active)
-        {
-            this.next = Mathf.Clamp(this.current + value * factor, 0.0f, 1.0f);
-
-        }
-        else
-        {
-            this.next = 0;
-        }
+        this.next = Mathf.Clamp(this.current + value * factor, 0.0f, 1.0f);
     }
-    public bool IsFill()
+    public void Rest()
     {
-        if (current >= .985f)
-        {
-            active = false;
-            lerpFactor = 1;
-            return true;
-        }
-        return false;
+        time = decay/100;
+        this.next = 0;
+        active = true;
     }
-    public bool IsEmpty()
+    public void Stop()
     {
-        if (current <= 0.015f)
-        {
-            active = true;
-            lerpFactor = 0.01f;
-            return true;
-        }
-        return false;
+        stopped = true;
+    }
+    public void Release()
+    {
+        stopped = false;
     }
 }

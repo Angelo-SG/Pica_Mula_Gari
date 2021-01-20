@@ -9,7 +9,7 @@ public class Life : MonoBehaviour
     private Animator animator;
     public int timeLimit = 0;
     private int currentLife = 1;
-    public enum state {DEAD, ALIVE}
+    public enum state { DEAD, ALIVE }
     public static state situation;
     public Effect effect = new ObjNullEffect();
     public static event Action<int> ratsDistance;
@@ -27,6 +27,9 @@ public class Life : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(effect is PowerUpEffect && other.gameObject.GetComponent<Obstacle>()){
+            return;
+        }
         if (other.gameObject.tag == "Element")
         {
             other.gameObject.GetComponent<Element>().Applay(gameObject);
@@ -71,14 +74,16 @@ public class Life : MonoBehaviour
     }
     private void dead()
     {
-        Invoke("laziDead",.5f);
-        
+        Invoke("laziDead", .5f);
+
         RatsAttack.instance.Stop();
         effect = new ObjNullEffect();
         situation = state.DEAD;
         animator.Play("Dead");
     }
-    private void laziDead(){
+    private void laziDead()
+    {
         Progress.instance.Stop();
     }
+
 }

@@ -3,6 +3,10 @@
 public class ObstacleCrack : Obstacle
 {
     public float stun;
+    private void OnEnable()
+    {
+        GetComponent<BoxCollider2D>().isTrigger = false;
+    }
     public override void Applay(GameObject target)
     {
         effect = new Crack(target);
@@ -10,5 +14,6 @@ public class ObstacleCrack : Obstacle
         (effect as Crack).Stun();
         target.GetComponent<Life>().effect = effect;
         target.GetComponent<Life>().CurrentPoint = -1;
+
     }
 }

@@ -1,7 +1,9 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
+    public static Spawn intance;
     public int line = 3;
     public float distanceY = 0;
     public float distanceX = 0;
@@ -12,6 +14,11 @@ public class Spawn : MonoBehaviour
 
     private int concecutive = 0;
     private int lastLineSelect = 0;
+
+    public void Awake()
+    {
+        intance = this;
+    }
     private void Start()
     {
         pool = GetComponent<Pool>();
@@ -92,13 +99,21 @@ public class Spawn : MonoBehaviour
     public void GiveBack(GameObject target)
     {
         int index = 0;
-        while(index < pool.list.Length)
+        while (index < pool.list.Length)
         {
             if (pool.list[index].Equals(target))
             {
                 pool.Put(index);
             }
             index++;
+        }
+    }
+
+    public void Refresh()
+    {
+        foreach (GameObject item in pool.list)
+        {
+            item.GetComponent<MovimentElemnts>().Speed = Progress.instance.Speed;
         }
     }
 }

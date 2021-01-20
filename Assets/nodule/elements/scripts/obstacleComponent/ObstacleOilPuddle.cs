@@ -5,8 +5,9 @@ public class ObstacleOilPuddle : Obstacle
     public float speed = 0;
     public float checkpointY1 = 0;
     public float checkpointY2 = 0;
-    private void OnEnable() {
-        GetComponent<BoxCollider2D>().enabled = true;
+    private void OnEnable()
+    {
+        GetComponent<BoxCollider2D>().isTrigger = false;
     }
     public override void Applay(GameObject target)
     {
@@ -15,6 +16,7 @@ public class ObstacleOilPuddle : Obstacle
         (effect as OilPuddle).Slip();
         target.GetComponent<Life>().effect = effect;
         target.GetComponent<Life>().CurrentPoint = -1;
+
 
     }
 }

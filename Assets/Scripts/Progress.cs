@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using Microsoft.Win32.SafeHandles;
 using UnityEditor;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class Progress : MonoBehaviour
     private float count = 0;
     private float speedF = 0;
     public bool able = true;
+    private float value = 1;
     public float Distance
     {
         get { return InitialSpeed * count + (acceleration * Mathf.Pow(count, 2)) / 2; }
@@ -18,6 +20,7 @@ public class Progress : MonoBehaviour
     }
     public float Speed
     {
+        set { }
         get { return speedF; }
     }
     public float Moment
@@ -36,7 +39,7 @@ public class Progress : MonoBehaviour
         if (able)
         {
             count += Time.deltaTime;
-            speedF = InitialSpeed + acceleration * count;
+            speedF = InitialSpeed + acceleration * value * count;
         }
     }
     public void Stop()
@@ -46,5 +49,13 @@ public class Progress : MonoBehaviour
     public void Play()
     {
         able = false;
+    }
+    public void Boost(float value)
+    {
+        Time.timeScale = value;
+    }
+    public void Rest()
+    {
+        Time.timeScale = 1;
     }
 }
