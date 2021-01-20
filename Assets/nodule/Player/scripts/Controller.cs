@@ -21,7 +21,6 @@ public class Controller : MonoBehaviour
     {
         if (Life.situation != Life.state.ALIVE)
         {
-            Debug.Log("dead");
             return;
         }
         direction = Input.GetAxisRaw("Vertical");
