@@ -16,7 +16,7 @@ public class PowerUpEffect : Effect
     }
     public void HiperPower(){
         target.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-        Progress.instance.Boost(3);
+        Progress.instance.Boost(2.2f);
     }
     public void Reset()
     {

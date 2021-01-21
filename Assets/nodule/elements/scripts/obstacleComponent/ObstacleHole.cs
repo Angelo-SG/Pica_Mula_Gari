@@ -9,6 +9,7 @@ public class ObstacleHole : Obstacle
     }
     public override void Applay(GameObject target)
     {
+        GetComponent<AudioSource>().Play();
         effect = new Hole(target);
         RatsAttack.instance.Stop();
         Invoke("laziFall", 0.1f);

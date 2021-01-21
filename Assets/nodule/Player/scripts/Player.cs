@@ -6,8 +6,13 @@ using UnityEngine.PlayerLoop;
 public class Player : MonoBehaviour
 {
     public int force;
+    public static Player instance;
     private float super;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void OnEnable()
     {
         PowerUp.superPowerOn += SPowerEffect;
@@ -22,7 +27,7 @@ public class Player : MonoBehaviour
     }
     public int Avaliable(int points)
     {
-        if (points - (force +  super) > 0)
+        if (points - (force + super) > 0)
         {
             return -1;
         }
@@ -34,7 +39,8 @@ public class Player : MonoBehaviour
         super = 10;
         GetComponent<Life>().effect = new PowerUpEffect(gameObject);
         (GetComponent<Life>().effect as PowerUpEffect).SuperPower();
-    }private void HPowerEffect()
+    }
+    private void HPowerEffect()
     {
         super = 30;
         GetComponent<Life>().effect = new PowerUpEffect(gameObject);
@@ -43,8 +49,8 @@ public class Player : MonoBehaviour
     private void POff()
     {
         super = 0;
-        GetComponent<Life>().effect =  new PowerUpEffect(gameObject);
+        GetComponent<Life>().effect = new PowerUpEffect(gameObject);
         (GetComponent<Life>().effect as PowerUpEffect).Reset();
         GetComponent<Life>().effect = new ObjNullEffect();
-    } 
+    }
 }

@@ -13,8 +13,8 @@ public class Life : MonoBehaviour
     public static state situation;
     public Effect effect = new ObjNullEffect();
     public static event Action<int> ratsDistance;
-
-
+    public static event Action alive;
+    public bool wait = false;
     private void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -43,21 +43,24 @@ public class Life : MonoBehaviour
     }
     public void FeedbackLife()
     {
-        countTime += Time.deltaTime;
-        if (currentPoint < 0 && currentLife > 0)
+        if(wait)
         {
-            countTime = 0;
-            currentLife--;
-            MoveRats();
-            currentPoint = 1;
-        }
-        else
-        {
-            if (countTime > timeLimit && currentLife < 2)
+            countTime += Time.deltaTime;
+            if (currentPoint < 0 && currentLife > 0)
             {
                 countTime = 0;
-                currentLife++;
+                currentLife--;
                 MoveRats();
+                currentPoint = 1;
+            }
+            else
+            {
+                if (countTime > timeLimit && currentLife < 2)
+                {
+                    countTime = 0;
+                    currentLife++;
+                    MoveRats();
+                }
             }
         }
     }
@@ -74,6 +77,10 @@ public class Life : MonoBehaviour
     }
     private void dead()
     {
+        if(alive != null)
+        {
+            alive();
+        }
         Invoke("laziDead", .5f);
 
         RatsAttack.instance.Stop();

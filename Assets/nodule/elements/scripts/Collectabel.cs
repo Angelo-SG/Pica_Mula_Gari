@@ -13,6 +13,8 @@ public class Collectabel : Element
     }
     public override void Applay(GameObject target)
     {
+
+        GetComponent<AudioSource>().Play();
         this.target = target;
         base.Applay();
         Notify(points);

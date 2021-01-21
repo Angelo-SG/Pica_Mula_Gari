@@ -9,4 +9,9 @@ public class Distance : MonoBehaviour
     {
         GetComponent<TextMeshProUGUI>().text = Math.Truncate(Progress.instance.Distance / factor).ToString();
     }
+
+    public int Value()
+    {
+        return Int32.Parse(GetComponent<TextMeshProUGUI>().text);
+    }
 }

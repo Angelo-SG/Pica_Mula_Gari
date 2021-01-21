@@ -11,6 +11,8 @@ public class ObstacleOilPuddle : Obstacle
     }
     public override void Applay(GameObject target)
     {
+
+        GetComponent<AudioSource>().Play();
         GetComponent<BoxCollider2D>().enabled = false;
         effect = new OilPuddle(target, speed, checkpointY1, checkpointY2);
         (effect as OilPuddle).Slip();

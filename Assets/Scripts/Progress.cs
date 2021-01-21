@@ -26,7 +26,7 @@ public class Progress : MonoBehaviour
     public float Moment
     {
         get { return count; }
-        set { }
+        set { count = value; }
     }
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class Progress : MonoBehaviour
     }
     public void Play()
     {
-        able = false;
+        able = true;
     }
     public void Boost(float value)
     {

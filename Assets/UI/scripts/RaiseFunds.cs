@@ -17,4 +17,8 @@ public class RaiseFunds : MonoBehaviour
     {
         GetComponent<TextMeshProUGUI>().text = (Int32.Parse(GetComponent<TextMeshProUGUI>().text) + life).ToString();
     }
+    public int Value()
+    {
+        return Int32.Parse(GetComponent<TextMeshProUGUI>().text);
+    }
 }

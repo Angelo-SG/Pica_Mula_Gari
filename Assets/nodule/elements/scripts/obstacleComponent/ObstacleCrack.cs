@@ -9,6 +9,7 @@ public class ObstacleCrack : Obstacle
     }
     public override void Applay(GameObject target)
     {
+        GetComponent<AudioSource>().Play();
         effect = new Crack(target);
         (effect as Crack).duraction = stun;
         (effect as Crack).Stun();
