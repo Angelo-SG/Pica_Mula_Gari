@@ -77,7 +77,7 @@ public class UiControl : MonoBehaviour
         Controller.instance.Stop();
         RatsAttack.instance.Stop();
         animator.SetBool("outGame", true);
-        animator.SetBool("record", false);
+        animator.SetBool("dead", false);
         animator.SetBool("pause", true);
     }
     public void Release()
@@ -89,7 +89,6 @@ public class UiControl : MonoBehaviour
         Controller.instance.Release();
         RatsAttack.instance.Play();
         animator.SetBool("outGame", false);
-        animator.SetBool("record", false);
         animator.SetBool("pause", false);
     }
     public void Quit()

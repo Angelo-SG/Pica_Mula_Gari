@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour
     private bool onFloor = true;
     public static Controller instance;
     private bool stopped = false;
+    private ParticleSystem particle;
     private void Awake()
     {
         instance = this;
@@ -20,6 +21,7 @@ public class Controller : MonoBehaviour
 
     private void Start()
     {
+        particle = GetComponentInChildren<ParticleSystem>();
         audio = GetComponent<AudioSource>();
         animator = gameObject.GetComponent<Animator>();
         startPosition = transform.position;
@@ -28,10 +30,12 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
+        var em = particle.emission;
         if (!stopped)
         {
             if (Life.situation != Life.state.ALIVE)
             {
+                em.enabled = false;
                 return;
             }
             direction = Input.GetAxisRaw("Vertical");
@@ -51,6 +55,14 @@ public class Controller : MonoBehaviour
                 }
             }
         }
+        if (onFloor)
+        {
+            em.enabled = true;
+        }
+        else
+        {
+            em.enabled = false;
+        }
     }
     public void OnFloor()
     {
@@ -62,7 +74,8 @@ public class Controller : MonoBehaviour
         stopped = true;
         animator.speed = 0;
     }
-    public void Release(){
+    public void Release()
+    {
         stopped = false;
         animator.speed = 1;
     }
